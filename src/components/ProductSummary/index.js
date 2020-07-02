@@ -10,21 +10,22 @@ export default ({
   name,
   meta,
   sku,
-  mainImage
+  mainImage,
+  description
 }) => (
   <Item.Group>
     <Item style={{alignItems: 'center'}}>
       <Item.Image size="medium">
         <Img
           style={{width: '250px'}}
-          sizes={mainImage.childImageSharp.sizes}
+          sizes={image}
           alt={name}
         />
       </Item.Image>
       <Item.Content>
         <Item.Header>{name}</Item.Header>
         <Item.Description>
-          <p>{meta.display_price.with_tax.formatted}</p>
+          <p>{description}</p>
           <Label>{`SKU: ${sku}`}</Label>
         </Item.Description>
         <Item.Extra>
