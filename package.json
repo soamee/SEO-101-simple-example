@@ -11,7 +11,7 @@
     "@moltin/sdk": "3.23.0",
     "babel-jest": "24.9.0",
     "babel-preset-gatsby": "0.5.0",
-    "core-js": "2",
+    "core-js": "^3.6.5",
     "eslint-plugin-jest": "22.16.0",
     "gatsby": "2.15.1",
     "gatsby-cli": "2.7.41",
