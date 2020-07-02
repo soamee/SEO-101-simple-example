@@ -1,5 +1,6 @@
 const Promise = require('bluebird')
 const path = require('path')
+const talksJSON = require('./src/contents/talks.json');
 
 exports.createPages = ({graphql, actions}) => {
   const {createPage} = actions
@@ -24,12 +25,13 @@ exports.createPages = ({graphql, actions}) => {
           console.log(result.errors)
           reject(result.errors)
         }
-        result.data.allMoltinProduct.edges.forEach(edge => {
+        talksJSON.forEach(edge => {
+          console.log({ edge });
           createPage({
-            path: `/product/${edge.node.id}/`,
+            path: `/product/${edge.id}/`,
             component: productPageTemplate,
             context: {
-              id: edge.node.id,
+              id: edge.id,
             },
           })
         })
