@@ -21,7 +21,7 @@ const DesktopMenu = ({location: {pathname}, token, cartCount, signout}) => {
           header
         >
           <Logo />
-          Starter Store
+          Friday's Talks
         </Menu.Item>
         {token ? (
           <Menu.Menu position="right">
@@ -57,13 +57,6 @@ const DesktopMenu = ({location: {pathname}, token, cartCount, signout}) => {
               active={activeItem === withPrefix('/login/')}
             >
               Sign in
-            </Menu.Item>
-            <Menu.Item
-              as={Link}
-              to="/cart/"
-              active={activeItem === withPrefix('/cart/')}
-            >
-              <ShoppingCartIcon cartCount={cartCount} name="Cart" />
             </Menu.Item>
           </Menu.Menu>
         )}

@@ -5,15 +5,21 @@ import Img from 'gatsby-image'
 import {Link} from 'gatsby'
 
 const mapProductsToItems = products =>
-  products.map(({node: {name, id, meta, mainImage}}) => {
-    const price = meta.display_price.with_tax.formatted || null
+  products.map(({ name, id, meta, mainImage, description, image }) => {
+    const price = description || null
     return {
       as: Link,
       to: `/product/${id}/`,
       childKey: id,
       image: (
         <Image>
-          <Img sizes={mainImage.childImageSharp.sizes} alt={name} />
+          <img
+            src={image}
+            fixed={image}
+            objectFit="cover"
+            objectPosition="50% 50%"
+            alt=""
+          />
         </Image>
       ),
       header: name,

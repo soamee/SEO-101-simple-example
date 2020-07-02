@@ -214,7 +214,6 @@ exports[`renders 1`] = `
               Footer Header
             </h4>
             <p>
-              Extra space for a call to action inside the footer that could help re-engage users.
             </p>
             <div
               class="ui horizontal list"

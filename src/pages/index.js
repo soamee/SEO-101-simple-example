@@ -6,6 +6,7 @@ import ProductList from '../components/ProductList'
 import SEO from '../components/SEO'
 import logo from '../images/ill-short-dark.svg'
 import Layout from '../components/Layout'
+import talks from '../contents/talks.json'
 
 const StoreIndex = ({location}) => {
   const data = useStaticQuery(graphql`
@@ -47,6 +48,7 @@ const StoreIndex = ({location}) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const products = get(data, 'allMoltinProduct.edges')
   const filterProductsWithoutImages = products.filter(v => v.node.mainImageHref)
+  console.log({ filterProductsWithoutImages });
   return (
     <Layout location={location}>
       <SEO title={siteTitle} />
@@ -64,10 +66,13 @@ const StoreIndex = ({location}) => {
             margin: '0 auto',
           }}
         >
-          <Image src={logo} alt="logo" />
+          <Image
+            src="https://media-exp1.licdn.com/dms/image/C4E0BAQG22WHE4p9Zcg/company-logo_200_200/0?e=2159024400&v=beta&t=7_f9APVxX_wZhHKLaVzTN5wVB05DOfX0ytEXn-yuhKc"
+            alt="logo"
+          />
         </Header.Content>
       </Header>
-      <ProductList products={filterProductsWithoutImages} />
+      <ProductList products={talks} />
     </Layout>
   )
 }
