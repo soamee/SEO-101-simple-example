@@ -90,5 +90,8 @@
     "cy:run": "cypress run",
     "test:e2e:dev": "cross-env CYPRESS_SUPPORT=y start-server-and-test dev http://localhost:8000 cy:open",
     "test:e2e:run": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
